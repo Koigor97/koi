@@ -9,6 +9,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        "custom-clamp-1": "clamp(300px, 90%, 1000px)",
+        "custom-clamp-2": "clamp(300px, 90%, 1150px)",
+        "custom-clamp-3": "clamp(300px, 90%, 1100px)",
+      },
+      boxShadow: {
+        "custom-1": "1px 1.5px 9px 1.5px #dddddd",
+        "custom-2": "1px 1.5px 6px 1.5px #dddddd",
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

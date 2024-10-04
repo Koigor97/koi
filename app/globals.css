@@ -46,7 +46,7 @@ body {
     --body: #0d0c0c;
     --bg-body: #f6f3ee;
     --primary1: #feb020;
-    --secondary1: #338a80;
+    --secondary1: #1c9b8d;
     --accent1: #89a989;
   }
   .dark {
@@ -93,4 +93,20 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.active {
+  color: var(--secondary1);
+  font-weight: 800;
+}
+
+.shadow-boxer {
+  -webkit-box-shadow: 3px 3px 10px 3.5px #dddddd;
+  -moz-box-shadow: 3px 3px 10px 3.5px #dddddd;
+  box-shadow: 3px 3px 10px 3.5px #dddddd;
+}
+.shadow-boxer2 {
+  -webkit-box-shadow: 0 1.5px 9px 0 rgba(222, 222, 222, 0.92);
+  -moz-box-shadow: 0 1.5px 9px 0 rgba(222, 222, 222, 0.92);
+  box-shadow: 0 1.5px 9px 0 rgba(222, 222, 222, 0.92);
 }
