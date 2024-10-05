@@ -8,8 +8,6 @@ import clsx from "clsx";
 import { AlignRight, XIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
-import { Button } from "../ui/button";
-
 const links = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Dev Journey" },
