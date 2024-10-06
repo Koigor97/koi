@@ -1,11 +1,4 @@
-import {
-  Card,
-  CardDescription,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
+import { Card, CardContent } from "../ui/card";
 
 import {
   SiGithub,
@@ -24,8 +17,8 @@ function HeroBox({ className }: { className?: string }) {
       <CardContent className="grid gap-6 p-0">
         <div className="grid gap-2">
           <h1 className="text-3xl md:text-4xl font-bold ">
-            Hi 👋🏾, I'm Koigor, a dedicated Software Developer. Turning complex
-            problems into innovative solutions with code.
+            Hi 👋🏾, I&apos;m Koigor, a dedicated Software Developer. Turning
+            complex problems into innovative solutions with code.
           </h1>
           <p className="text-lg md:text-xl ">
             I specialize in creating scalable, dynamic, and responsive web
