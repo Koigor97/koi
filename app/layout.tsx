@@ -67,10 +67,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${nunito.className} antialiased`}>
-        <header>
+        <header className="max-w-custom-clamp-3 mx-auto md:max-w-custom-clamp-2 ">
           <Navigation />
         </header>
-        <main>{children}</main>
+        <main className="max-w-custom-clamp-3 mx-auto md:max-w-custom-clamp-2 ">
+          {children}
+        </main>
       </body>
     </html>
   );
