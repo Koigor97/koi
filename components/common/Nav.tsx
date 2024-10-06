@@ -44,7 +44,9 @@ function ResponsiveNav() {
   return (
     <nav>
       <div className="flex justify-between items-center py-4">
-        <AlignRight className="w-7 h-7 md:hidden" onClick={handleToggle} />
+        {!isOpen && (
+          <AlignRight className="w-7 h-7 md:hidden" onClick={handleToggle} />
+        )}
 
         <ul
           className={`${
@@ -70,7 +72,7 @@ function ResponsiveNav() {
         initial={{ x: "100%" }}
         animate={isOpen ? { x: 0 } : { x: "100%" }}
         transition={{ duration: 0.5 }}
-        className="fixed top-0 right-0 w-1/2 h-screen bg-white z-50 lg:hidden py-3"
+        className="fixed top-0 right-0 w-1/2 h-screen bg-white z-50 lg:hidden py-3 overflow-auto"
       >
         <div className="grid gap-5">
           <XIcon onClick={handleToggle} className="ml-2" />
