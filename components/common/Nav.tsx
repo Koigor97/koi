@@ -21,6 +21,13 @@ function ResponsiveNav() {
 
   function handleToggle() {
     setIsOpen((prev) => !prev);
+
+    // Add `overflow-hidden` class to body to prevent scrolling when nav is open
+    if (!isOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
   }
 
   // check window size on load and window resize
@@ -43,55 +50,24 @@ function ResponsiveNav() {
 
   return (
     <nav>
-      <div className="flex justify-between items-center py-4">
-        {!isOpen && (
-          <AlignRight className="w-7 h-7 md:hidden" onClick={handleToggle} />
-        )}
-
-        <ul
-          className={`${
-            isMobile ? "hidden" : "flex"
-          } text-lg text-bodyText/85 font-medium gap-5`}
-        >
-          {links.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className={clsx({
-                  "text-secondary1 font-bold underline underline-offset-4":
-                    pathname === link.href,
-                })}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <motion.div
-        initial={{ x: "100%" }}
-        animate={isOpen ? { x: 0 } : { x: "100%" }}
-        transition={{ duration: 0.5 }}
-        className="fixed top-0 right-0 w-1/2 h-screen bg-white z-50 lg:hidden py-3 overflow-auto"
-      >
-        <div className="grid gap-5">
-          <XIcon onClick={handleToggle} className="ml-2" />
-          <ul className="px-2">
+      {!isOpen && (
+        <AlignRight className="w-7 h-7 md:hidden" onClick={handleToggle} />
+      )}
+      {!isMobile && (
+        <div className="flex justify-between items-center py-4">
+          <ul
+            className={`${
+              isMobile ? "hidden" : "flex"
+            } text-lg text-bodyText/85 font-medium gap-5`}
+          >
             {links.map((link) => (
-              <li
-                key={link.href}
-                className={clsx(
-                  {
-                    "bg-secondary1 text-bgBody font-bold ":
-                      pathname === link.href,
-                  },
-                  "px-4 py-2 rounded-md"
-                )}
-              >
+              <li key={link.href}>
                 <Link
                   href={link.href}
-                  onClick={handleToggle}
-                  className="text-lg"
+                  className={clsx({
+                    "text-secondary1 font-bold underline underline-offset-4":
+                      pathname === link.href,
+                  })}
                 >
                   {link.label}
                 </Link>
@@ -99,7 +75,42 @@ function ResponsiveNav() {
             ))}
           </ul>
         </div>
-      </motion.div>
+      )}
+      {isMobile && (
+        <motion.div
+          layout
+          initial={{ x: "100%" }}
+          animate={isOpen ? { x: 0 } : { x: "100%" }}
+          transition={{ duration: 0.5 }}
+          className="fixed top-0 right-0 w-1/2 h-screen bg-white z-50 lg:hidden py-3 overflow-auto"
+        >
+          <div className="grid gap-5">
+            <XIcon onClick={handleToggle} className="ml-2" />
+            <ul className="px-2">
+              {links.map((link) => (
+                <li
+                  key={link.href}
+                  className={clsx(
+                    {
+                      "bg-secondary1 text-bgBody font-bold ":
+                        pathname === link.href,
+                    },
+                    "px-4 py-2 rounded-md"
+                  )}
+                >
+                  <Link
+                    href={link.href}
+                    onClick={handleToggle}
+                    className="text-lg"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </motion.div>
+      )}
     </nav>
   );
 }
