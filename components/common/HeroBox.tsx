@@ -27,9 +27,19 @@ function HeroBox({ className }: { className?: string }) {
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <Button className="bg-bodyText text-base">Contact Me</Button>
-          <Button className="bg-secondary1 text-base hover:bg-green-800">
-            Resume
+          <Button className="bg-bodyText text-base" asChild>
+            <a href="mailto:koigorfogbawa@gmail.com">Contact Me</a>
+          </Button>
+          <Button
+            className="bg-secondary1 text-base hover:bg-green-800"
+            asChild
+          >
+            <a
+              href="/docs/SamuelTuray_Resume.pdf"
+              download="SamuelTuray_Resume.pdf"
+            >
+              Resume
+            </a>
           </Button>
         </div>
 
