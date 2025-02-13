@@ -14,14 +14,12 @@ function ExperienceBox() {
               backdrop-blur-md bg-opacity-20 
               rounded-lg shadow-lg py-10 px-8"
     >
-      <Badge className="bg-[#5f9e5f] w-fit">
-        <h2 className="text-base md:text-lg">Experience</h2>
+      <Badge className="bg-[#5f9e5f] w-fit text-base md:text-lg">
+       Experience
       </Badge>
       <CardHeader className="p-0">
-        <CardTitle>
-          <h2 className=" text-xl md:text-2xl text-secondary1 font-bold">
+        <CardTitle className=" text-xl md:text-2xl text-secondary1 font-bold">
             Programming Intern
-          </h2>
         </CardTitle>
         <CardDescription className="text-lg text-bodyText font-semibold">
           Research and Business Development Center (RBDC)

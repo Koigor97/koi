@@ -7,8 +7,8 @@ function AboutSection() {
               backdrop-blur-md bg-opacity-20 
               rounded-lg shadow-lg py-10 px-8"
     >
-      <Badge className="bg-primary1 text-bodyText w-fit">
-        <h2 className="text-base">About Me</h2>
+      <Badge className="bg-primary1 text-bodyText w-fit text-base">
+        About Me
       </Badge>
 
       <div>

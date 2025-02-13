@@ -8,8 +8,8 @@ function ExperienceBox() {
               backdrop-blur-md bg-opacity-20 
               rounded-lg shadow-lg py-10 px-8"
     >
-      <Badge className="bg-[#338b80] w-fit h-fit">
-        <h2 className="text-base md:text-lg">Skills</h2>
+      <Badge className="bg-[#338b80] w-fit h-fit text-base md:text-lg">
+        Skills
       </Badge>
 
       <CardContent className="p-0 grid gap-3">

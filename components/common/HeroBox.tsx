@@ -35,7 +35,7 @@ function HeroBox({ className }: { className?: string }) {
             asChild
           >
             <a
-              href="/docs/SamuelTuray_Resume.pdf"
+              href="../../public/docs/SamuelTuray_Resume%20.pdf"
               download="SamuelTuray_Resume.pdf"
             >
               Resume
