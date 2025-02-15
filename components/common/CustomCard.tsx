@@ -15,12 +15,15 @@ export interface ProjectCardProps {
 }
 
 // Defining the props for a blog card
-interface BlogCardProps {
+export interface BlogCardProps {
     image: string;
     tags: string[];
     title: string;
+    thumbnail: string;
     datePosted: string;
-    blogPostLink: string;
+    slug: string;
+    content?: string;
+    date?: string | number | Date;
 }
 
 export type CustomCardProps =
@@ -78,14 +81,14 @@ export const CustomCard: React.FC<CustomCardProps> = (props) => {
         );
     } else if (props.type === "blog") {
         // Destructure blog-specific props.
-        const { image, tags, title, datePosted, blogPostLink } = props;
+        const { thumbnail, tags, title, datePosted, slug } = props;
         return (
-            <Link href={blogPostLink} target="_blank" rel="noopener noreferrer">
+            <Link href={`/blog/${slug}`} rel="noopener noreferrer">
                 <Card className="max-w-md hover:shadow-lg transition-shadow duration-200">
                     <CardHeader>
                         {/* Blog image */}
                         <Image
-                            src={image}
+                            src={thumbnail}
                             alt={title}
                             className="rounded-md w-full object-cover"
                             width={500}
